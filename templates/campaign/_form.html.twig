@@ -1,45 +1,19 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <div class="container">
-		<div class="section">
-			<div class="row">
-				<div class="col s12 center">
-					<h4>Créez votre campagne maintenant</h4>
-				</div>
-			</div>
 			<!--   Form Section   -->
-			<div class="card">
-				<div class="card-content">
-					<div class="row">
-						<form>
 							<div class="input-field col s12 l6">
-								<input id="author" type="text" class="validate">
-								<label for="author">Votre Nom</label>
+								{{form_row(form.content)}}
 							</div>
 							<div class="input-field col s12 l6">
-								<input id="email" type="email" class="validate">
-								<label for="email">Votre Email</label>
+								{{form_row(form.title)}}
 							</div>
 							<div class="input-field col s12 l8">
-								<input id="title" type="text" class="validate">
-								<label for="title">Titre de votre campagne</label>
-							</div>
-							<div class="input-field col s12">
-								<textarea id="description" class="materialize-textarea" placeholder="Décrivez à vos amis pourquoi vous faites une campagne"></textarea>
+								{{form_row(form.goal)}}
 							</div>
 							<div class="input-field col s12 l6">
-								<input id="goal" type="number" class="validate">
-								<label for="goal">Votre objectif en euros</label>
+								{{form_row(form.name)}}
 							</div>
 							<button class="btn btn-large waves-effect waves-light pink lighten-1 col s12" style="margin-top: 20px;" type="submit" name="action">
-								Validez la campagne
-								<i class="material-icons right">{{ button_label|default('Save') }}</i>
+								{{ button_label|default('Validez la campagne') }}
+								<i class="material-icons right"></i>
 							</button>
-						</form>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
 {{ form_end(form) }}

@@ -17,8 +17,9 @@ class CampaignController extends AbstractController
     #[Route('/', name: 'app_campaign_index', methods: ['GET'])]
     public function index(CampaignRepository $campaignRepository): Response
     {
+        $allCampaigns = $campaignRepository->findAll();
         return $this->render('campaign/index.html.twig', [
-            'campaigns' => $campaignRepository->findAll(),
+            'campaigns' => $allCampaigns,
         ]);
     }
 
